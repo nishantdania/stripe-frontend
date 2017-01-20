@@ -37,7 +37,7 @@ var CouponsViewModel = function() {
 				beforeSend: function(request) {
 					request.setRequestHeader("Authorization", authToken);
 				},
-				url: 'http://localhost:1337/userCoupons/',
+				url: 'http://localhost:1337/api/userCoupons/',
 				crossDomain: true,
 				success: function(returnedData) 
 				{ 
@@ -87,7 +87,7 @@ var CouponsViewModel = function() {
 		data.coupon = this.coupon;
 		$.ajax({
 			method:'POST',
-			url: 'http://localhost:1337/addCoupon/',
+			url: 'http://localhost:1337/api/addCoupon/',
 			beforeSend: function(request) {
 				request.setRequestHeader("Authorization", authToken);
 			},
@@ -114,7 +114,7 @@ var CouponsViewModel = function() {
 		var that = this;
 		$.ajax({
 			method:'POST',
-			url: 'http://localhost:1337/removeCoupon/',
+			url: 'http://localhost:1337/api/removeCoupon/',
 			beforeSend: function(request) {
 				request.setRequestHeader("Authorization", authToken);
 			},

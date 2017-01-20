@@ -17,7 +17,7 @@ var IndexViewModel = function() {
 		that = this;
 		$.ajax({
 			method:'POST',
-			url: 'http://localhost:1337/login/',
+			url: 'http://localhost:1337/api/login/',
 			data: data,
 			crossDomain: true,
 			dataType: 'json',
@@ -45,7 +45,7 @@ var IndexViewModel = function() {
 		that = this;
 		$.ajax({
 			method:'POST',
-			url: 'http://localhost:1337/signup/',
+			url: 'http://localhost:1337/api/signup/',
 			data: data,
 			crossDomain: true,
 			dataType: 'json',
