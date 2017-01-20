@@ -76,7 +76,7 @@ var CouponsViewModel = function() {
 		this.coupon.id = this.id();
 		if(this.percent_off() != undefined && this.percent_off() != '')
 			this.coupon.percent_off = this.percent_off();
-		else
+		if(this.amount_off() != undefined && this.amount_off() != '')
 			this.coupon.amount_off = this.amount_off();
 		this.coupon.max_redemptions = this.max_redemptions();
 		this.coupon.duration_in_months = this.duration_in_months();

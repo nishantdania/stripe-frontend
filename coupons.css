@@ -25,7 +25,9 @@ input:focus {
 }
 
 button {
-	max-width : 160px;
+	max-width : 120px;
+	padding : 4px;
+	margin : 20px;
 }
 
 .err {
@@ -48,8 +50,15 @@ button {
     border-radius: 4px;
 }
 
-.coupon-item span {
+.coupon-span {
+	display : inline-block;
+	min-width : 90%;
+}
+
+.coupon-span div {
 	margin : 8px;
+	font-weight : 600;
+	display : inline-block;
 }
 
 .coupon-item button {

@@ -64,6 +64,12 @@ button {
 	cursor : pointer;
 	font-size : 12px;
 	font-weight : 600;
+	color : white;
+	background : #4a4a4a;
+}
+
+button:hover {
+	background : #585858;	
 }
 
 button:focus {

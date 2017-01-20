@@ -35,10 +35,12 @@
 				<h4>Your Coupons</h4>
 				<ul data-bind='foreach: coupons' class='coupon-list'>
 					<li class='coupon-item'>
-						<span data-bind='text: id'></span>
-						<span data-bind='text: '\$'+ amount_off'></span>
-						<span data-bind='text: percent_off + '%''></span>
-						<button data-bind='click: $parent.removeCoupon'>Remove</button>
+						<span class='coupon-span'>
+							<div data-bind='text: id'></div>
+							<div data-bind='visible: amount_off, text: amount_off'></div>
+							<div data-bind='visible: percent_off, text: percent_off'></div>
+						</span>
+						<span><button data-bind='click: $parent.removeCoupon'>Remove</button></span>
 					</li>
 				</ul>
 			</section>
