@@ -41,4 +41,25 @@ button {
 }
 .coupon-item {
 	width : 100%;
+	margin: 4px;
+    padding: 4px;
+    background: white;
+    list-style: none;
+    border-radius: 4px;
 }
+
+.coupon-item span {
+	margin : 8px;
+}
+
+.coupon-item button {
+	padding : 4px;
+	max-width : 70px;
+}
+
+.coupon-container {
+	background : none;
+	border : none;
+}
+
+
