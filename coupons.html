@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en" data-framework="knockoutjs">
+	<head>
+		<meta charset="utf-8">
+		<title>Stripe Coupons</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="base.css">
+		<link rel="stylesheet" href="coupons.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.1/knockout-min.js"></script>
+	</head>
+
+	<body>
+		<div class='page-outer'>
+			<section>
+				<input data-bind='value: id' placeholder='ID(code)'/>
+				<input data-bind='value: percent_off' placeholder='Percent off'/>
+				<input data-bind='value: amount_off' placeholder='Amount off'/>
+				<input data-bind='value: max_redemptions' placeholder='Max redemptions'/>
+				<input data.bind='datePicker: redeem_by' type='date' placeholder='Redeem by'/>
+				<select data-bind='options: duration,
+					optionsText: function(item){
+						return item.durationType;
+					},
+					value: selectedDuration,
+					optionsCaption:'Duration''
+				></select>
+				<input data-bind='value: duration_in_months, visible: selectedDuration().durationValue == duration()[2].durationValue' placeholder='Duration in months'/>
+				<button data-bind='click: handleCreateCoupon'>Create Coupon</button>
+				<div id='message' class='err'>
+					<strong data-bind='text: message'></strong>
+				</div>
+			</section>			
+			<section>
+				<h4>Your Coupons</h4>
+				<ul data-bind='foreach: coupons' class='coupon-list'>
+					<li class='coupon-item'>
+						<span data-bind='text: id'></span>
+						<span data-bind='text: '\$'+ amount_off'></span>
+						<button data-bind='click: $parent.removeCoupon'>Remove</button>
+					</li>
+				</ul>
+			</section>
+		</div>
+	<script src="view-models/couponsVM.js"></script>
+	<script src="models/coupon.js"></script>
+	</body>
+</html>
